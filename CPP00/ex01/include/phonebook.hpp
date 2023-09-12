@@ -21,5 +21,7 @@ private:
 
 std::string space(std::string str);
 std::string dot(std::string str);
+int verif(std::string str);
+int verifNum(std::string str);
 
 #endif
