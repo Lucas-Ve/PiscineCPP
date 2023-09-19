@@ -5,10 +5,10 @@
 
 class FragTrap : virtual public ClapTrap
 {
-private:
+// private:
 public:
     FragTrap(void);
-    FragTrap(std::string const name);
+    FragTrap(std::string name);
     FragTrap(FragTrap const & src);
     ~FragTrap();
 

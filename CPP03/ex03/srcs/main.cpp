@@ -1,49 +1,53 @@
 # include "../includes/ClapTrap.hpp"
 # include "../includes/ScavTrap.hpp"
 # include "../includes/FragTrap.hpp"
+# include "../includes/DiamondTrap.hpp"
 
 int	main(void)
 {
 	std::string s1 = "Clyde";
 	std::string s2 = "Scarlet";
 	std::string s3 = "Fred";
+	std::string s4 = "Diego";
 
 	// Constructors
-	ClapTrap claptrap(s1);
-	ScavTrap scavtrap(s2);
-	FragTrap fragtrap(s3);
+	DiamondTrap	diamondtrap(s4);
+	std::cout << diamondtrap << std::endl;
 	std::cout << std::endl;
 
-	// Attacks for each class
-	fragtrap.attack(s2);
-	claptrap.attack(s2);
-	scavtrap.attack(s1);
-	scavtrap.guardGate();
+	// Repairs
+	diamondtrap.takeDamage(14);
+	diamondtrap.beRepaired(18);
 	std::cout << std::endl;
 
 	// New class attack until exhaustion
-	fragtrap.attack(s2);
-	fragtrap.attack(s2);
-	fragtrap.attack(s2);
-	fragtrap.attack(s2);
+	diamondtrap.attack(s2);
+	diamondtrap.attack(s2);
+	diamondtrap.attack(s2);
+	std::cout << std::endl;
+
+	diamondtrap.guardGate();
+	diamondtrap.attack(s2);
 	std::cout << std::endl;
 
 	// New class personal method call
-	fragtrap.highFivesGuys();
+	diamondtrap.highFivesGuys();
 	std::cout << std::endl;
 
+	diamondtrap.whoAmI();
+	std::cout << std::endl;
 	// Repair over max hp
-	fragtrap.beRepaired(18);
+	diamondtrap.beRepaired(18);
 
 	// Take damage
-	fragtrap.takeDamage(50);
+	diamondtrap.takeDamage(50);
 
 	// Die
-	fragtrap.takeDamage(50);
+	diamondtrap.takeDamage(100);
 
 	// Do something after dying
-	fragtrap.beRepaired(20);
-	fragtrap.attack(s2);
+	diamondtrap.beRepaired(20);
+	diamondtrap.attack(s2);
 
 	std::cout << std::endl;
 	return (0); 

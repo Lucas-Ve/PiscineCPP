@@ -6,9 +6,11 @@
 class ScavTrap : virtual public ClapTrap
 {
 private:
+protected:
+    int _scavenergyPoints;
 public:
     ScavTrap(void);
-    ScavTrap(std::string const name);
+    ScavTrap(std::string name);
     ScavTrap(ScavTrap const & src);
     ~ScavTrap();
 
