@@ -2,31 +2,31 @@
 
 ClapTrap::ClapTrap(void):_name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default constructor ClapTrap called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src)
 {
     *this = src;
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor ClapTrap called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const name):_name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "Constructor with name called" << std::endl;
+    std::cout << "Constructor ClapTrap with name called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Destructor ClapTrap called" << std::endl;
 }
 
-ClapTrap & ClapTrap::operator=(ClapTrap const & src)
+ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
 {
-    this->_name = src.getName();
-    this->_attackDamage = src.getAttackDamage();
-    this->_hitPoints = src.getHitPoints();
-    this->_energyPoints = src.getEnergyPoints();
+    this->_name = rhs.getName();
+    this->_attackDamage = rhs.getAttackDamage();
+    this->_hitPoints = rhs.getHitPoints();
+    this->_energyPoints = rhs.getEnergyPoints();
     return (*this);
 }
 

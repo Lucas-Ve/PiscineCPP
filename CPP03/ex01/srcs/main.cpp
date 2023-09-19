@@ -1,53 +1,34 @@
 # include "../includes/ClapTrap.hpp"
+# include "../includes/ScavTrap.hpp"
 
 int	main(void)
 {
-	std::string s1 = "Biggie";
-	std::string s2 = "Tupac";
+	std::string s1 = "Clyde";
+	std::string s2 = "Scarlet";
 
-	ClapTrap claptrap1(s1);
-	ClapTrap claptrap2(s2);
+	ClapTrap claptrap(s1);
+	ScavTrap scavtrap(s2);
 
 	std::cout << std::endl;
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	claptrap1.attack(s2);
-	// claptrap2.takeDamage(4);
-	// claptrap2.beRepaired(3);
-	// claptrap2.beRepaired(18);
-
-	// claptrap2.attack(s1);
-	// claptrap1.takeDamage(9);
-	// claptrap2.attack(s1);
-	// claptrap1.takeDamage(9);
-	// claptrap2.attack(s1);
-
-	// claptrap1.beRepaired(3);
-	// claptrap1.beRepaired(64);
-    std::cout << "Biggie : "<< claptrap1 << std::endl;
-    std::cout << "Tupac : "<< claptrap2 << std::endl;
+	claptrap.attack(s2);
+	scavtrap.takeDamage(0);
+	scavtrap.beRepaired(18);
 	std::cout << std::endl;
-
-	/*--------Tesst--------*/
-	ClapTrap test("salut la team");
-	ClapTrap test2(test);
-
-	std::cout << "test --> " << test << std::endl;
-	std::cout << "test2 --> " << test2 << std::endl;
-	test2 = test;
-	std::cout << "test2 apres assignation --> " << test2 << std::endl;
+	scavtrap.attack(s1);
+	claptrap.takeDamage(20);
+	scavtrap.attack(s1);
+	claptrap.takeDamage(20);
+	scavtrap.attack(s1);
+	claptrap.beRepaired(64);
+	std::cout << std::endl;
+	scavtrap.guardGate();
+	scavtrap.attack(s1);
+	std::cout << std::endl;
+	scavtrap.takeDamage(100);
+	scavtrap.takeDamage(1);
+	scavtrap.attack(s2);
+	scavtrap.beRepaired(200);
+	
+	std::cout << std::endl;
 	return (0); 
 }
