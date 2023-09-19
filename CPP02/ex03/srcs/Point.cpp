@@ -23,3 +23,13 @@ Point & Point::operator=(Point const & rhs)
     this->_y = rhs._y;
     return (*this);
 }
+
+Fixed Point::getX(void)const
+{
+    return (this->_x);
+}
+
+Fixed Point::getY(void)const
+{
+    return (this->_y);
+}
