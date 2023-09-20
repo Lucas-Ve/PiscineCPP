@@ -14,6 +14,11 @@ int main(int argc, char *argv[])
         s1 = argv[2];
         s2 = argv[3];
         std::ifstream ifs(argv[1]);
+        if (ifs.fail())
+        {
+            std::cout << "Error !" << std::endl;
+            return (1);
+        }
         std::ofstream ofs((std::string(argv[1]) + ".replace").c_str());
         while (std::getline(ifs, str))
         {
