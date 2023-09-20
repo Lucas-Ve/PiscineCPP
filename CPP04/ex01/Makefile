@@ -1,6 +1,6 @@
 .PHONY:		fclean, all, clear, clean, re
 
-NAME					=	Polymorphism
+NAME					=	PolymorphismBrain
 
 CMP						=	c++
 FLG						=	-Wall -Wextra -Werror -std=c++98
