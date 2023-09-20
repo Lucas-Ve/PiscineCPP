@@ -2,12 +2,13 @@
 #define DOG_H
 
 #include "../includes/Animal.hpp"
+#include "../includes/Brain.hpp"
 
 class Dog : public Animal
 {
 private:
     std::string _type;
-    Brain
+    Brain *_brain;
 public:
     Dog(void);
     Dog(Dog const & src);

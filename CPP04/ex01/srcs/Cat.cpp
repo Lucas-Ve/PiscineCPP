@@ -4,21 +4,25 @@ Cat::Cat(void):Animal()
 {
     std::cout << "Default constructor Cat called" << std::endl;
     this->type = "Cat";
+    this->_brain = new Brain();
 }
 
 Cat::Cat(Cat const & src):Animal(src)
 {
     std::cout << "Copy constructor Cat called" << std::endl;
     *this = src;
+    this->_brain = new Brain();
 }
 
 Cat::Cat(std::string const name):Animal(name), _type(name)
 {
     std::cout << "Constructor Cat with name called" << std::endl;
+    this->_brain = new Brain();
 }
 
 Cat::~Cat()
 {
+    delete _brain;
     std::cout << "Destructor Cat called" << std::endl;
 }
 
