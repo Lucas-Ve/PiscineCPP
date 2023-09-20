@@ -8,11 +8,11 @@ RM						=	rm -rf
 BUILD_DIR				= 	build/
 
 INC_DIR					=	includes
-INC_FILE				= 	Animal Dog Cat WrongCat WrongAnimal Brain
+INC_FILE				= 	AAnimal Dog Cat WrongCat WrongAnimal Brain
 INC						= 	$(addsuffix .hpp, $(addprefix $(INC_DIR)/, $(INC_FILE)))
 
 SRCS_DIR				=	srcs
-SRCS_FILE				=	main Animal Dog Cat WrongCat WrongAnimal Brain
+SRCS_FILE				=	main AAnimal Dog Cat WrongCat WrongAnimal Brain
 SRCS					=  	$(addsuffix .cpp, $(addprefix $(SRCS_DIR)/, $(SRCS_FILE)))
 
 OBJS			    	= 	$(SRCS:%.cpp=$(BUILD_DIR)%.o)

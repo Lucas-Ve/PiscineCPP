@@ -1,10 +1,10 @@
 # ifndef CAT_H
 #define CAT_H
 
-#include "../includes/Animal.hpp"
+#include "../includes/AAnimal.hpp"
 #include "../includes/Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 private:
     std::string _type;

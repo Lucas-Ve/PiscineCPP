@@ -1,4 +1,4 @@
-#include "../includes/Animal.hpp"
+#include "../includes/AAnimal.hpp"
 #include "../includes/Cat.hpp"
 #include "../includes/Dog.hpp"
 #include "../includes/WrongAnimal.hpp"
@@ -6,7 +6,7 @@
 
 int main()
 {
-    Animal	*animals[4];
+    AAnimal	*animals[4];
 	int				i;
 
 	i = 0;
