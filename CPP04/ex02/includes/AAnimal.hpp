@@ -2,6 +2,7 @@
 #define AANIMAL_H
 
 #include <iostream>
+#include "../includes/Brain.hpp"
 
 class AAnimal
 {
@@ -16,6 +17,7 @@ public:
     AAnimal & operator=(AAnimal const & rhs);
 
     virtual void makeSound(void)const = 0;
+    virtual Brain *get_brain(void) const;
     std::string getType(void)const;
 };
 

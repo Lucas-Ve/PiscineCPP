@@ -18,6 +18,7 @@ public:
     Dog & operator=(Dog const & rhs);
 
     void makeSound(void)const;
+    Brain *get_brain(void) const;
 };
 
 #endif

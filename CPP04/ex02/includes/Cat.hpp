@@ -18,6 +18,7 @@ public:
     Cat & operator=(Cat const & rhs);
 
     void makeSound(void)const;
+    Brain *get_brain(void) const;
 };
 
 #endif

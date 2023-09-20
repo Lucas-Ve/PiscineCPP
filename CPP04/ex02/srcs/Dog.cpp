@@ -7,17 +7,17 @@ Dog::Dog(void):AAnimal()
     this->_brain = new Brain();
 }
 
-Dog::Dog(Dog const & src):AAnimal(src)
-{
-    std::cout << "Copy constructor Dog called" << std::endl;
-    *this = src;
-    this->_brain = new Brain();
-}
 
 Dog::Dog(std::string const name):AAnimal(name), _type(name)
 {
     std::cout << "Constructor Dog with name called" << std::endl;
     this->_brain = new Brain();
+}
+
+Dog::Dog(Dog const & src):AAnimal(src), _brain(new Brain())
+{
+    std::cout << "Copy constructor Dog called" << std::endl;
+    *this->_brain = *src._brain;
 }
 
 Dog::~Dog()
@@ -29,10 +29,16 @@ Dog::~Dog()
 Dog & Dog::operator=(Dog const & rhs)
 {
     AAnimal::operator=(rhs);
+    *this->_brain = *rhs._brain;
     return (*this);
 }
 
 void    Dog::makeSound(void)const
 {
     std::cout << "this dog " <<  this->getType() << " do WOUAFFF."<< std::endl;
+}
+
+Brain * Dog::get_brain(void)const
+{
+    return (this->_brain);
 }

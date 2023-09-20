@@ -6,7 +6,6 @@
 class Brain
 {
 private:
-    std::string _ideas[100];
 
 public:
     Brain(void);
@@ -16,6 +15,7 @@ public:
 
     Brain & operator=(Brain const & rhs);
 
+    std::string _ideas[100];
 };
 
 #endif

@@ -7,18 +7,18 @@ Cat::Cat(void):Animal()
     this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const & src):Animal(src)
-{
-    std::cout << "Copy constructor Cat called" << std::endl;
-    *this = src;
-    this->_brain = new Brain();
-}
-
 Cat::Cat(std::string const name):Animal(name), _type(name)
 {
     std::cout << "Constructor Cat with name called" << std::endl;
     this->_brain = new Brain();
 }
+
+Cat::Cat(Cat const & src):Animal(src), _brain(new Brain())
+{
+    std::cout << "Copy constructor Cat called" << std::endl;
+    *_brain = *src._brain;
+}
+
 
 Cat::~Cat()
 {
@@ -29,6 +29,7 @@ Cat::~Cat()
 Cat & Cat::operator=(Cat const & rhs)
 {
     Animal::operator=(rhs);
+    *_brain = *rhs._brain;
     return (*this);
 }
 

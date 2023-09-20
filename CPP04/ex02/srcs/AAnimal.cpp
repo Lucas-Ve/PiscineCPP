@@ -37,3 +37,8 @@ std::string AAnimal::getType(void)const
 {
     return (this->type);
 }
+
+Brain * AAnimal::get_brain(void)const
+{
+    return (NULL);
+}
