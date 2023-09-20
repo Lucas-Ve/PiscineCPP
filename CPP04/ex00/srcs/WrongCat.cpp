@@ -12,7 +12,7 @@ WrongCat::WrongCat(WrongCat const & src):WrongAnimal(src)
     *this = src;
 }
 
-WrongCat::WrongCat(std::string const name):WrongAnimal(name), _type(name)
+WrongCat::WrongCat(std::string const name):WrongAnimal(name)
 {
     std::cout << "Constructor WrongCat with name called" << std::endl;
 }

@@ -12,7 +12,7 @@ Cat::Cat(Cat const & src):Animal(src)
     *this = src;
 }
 
-Cat::Cat(std::string const name):Animal(name), _type(name)
+Cat::Cat(std::string const name):Animal(name)
 {
     std::cout << "Constructor Cat with name called" << std::endl;
 }

@@ -7,7 +7,7 @@ Cat::Cat(void):AAnimal()
     this->_brain = new Brain();
 }
 
-Cat::Cat(std::string const name):AAnimal(name), _type(name)
+Cat::Cat(std::string const name):AAnimal(name)
 {
     std::cout << "Constructor Cat with name called" << std::endl;
     this->_brain = new Brain();

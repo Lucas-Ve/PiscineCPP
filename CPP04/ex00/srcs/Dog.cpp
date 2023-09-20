@@ -12,7 +12,7 @@ Dog::Dog(Dog const & src):Animal(src)
     *this = src;
 }
 
-Dog::Dog(std::string const name):Animal(name), _type(name)
+Dog::Dog(std::string const name):Animal(name)
 {
     std::cout << "Constructor Dog with name called" << std::endl;
 }

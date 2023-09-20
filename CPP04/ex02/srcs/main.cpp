@@ -27,7 +27,7 @@ int main()
 	std::cout << "1" << cat_brain->get_brain()->_ideas[0] << std::endl;
 	std::cout << "2" << cat_brain2->get_brain()->_ideas[0] << std::endl;
 	cat_brain->get_brain()->_ideas[0] = "yo";
-	std::cout << "1" << cat_brain->get_brain()->_ideas[0] << std::endl;
+	// std::cout << "1" << cat_brain->_type << std::endl;
 	std::cout << "2" << cat_brain2->get_brain()->_ideas[0] << std::endl;
 	// while (i)
 	// {

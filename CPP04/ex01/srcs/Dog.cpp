@@ -7,7 +7,7 @@ Dog::Dog(void):Animal()
     this->_brain = new Brain();
 }
 
-Dog::Dog(std::string const name):Animal(name), _type(name)
+Dog::Dog(std::string const name):Animal(name)
 {
     std::cout << "Constructor Dog with name called" << std::endl;
     this->_brain = new Brain();
