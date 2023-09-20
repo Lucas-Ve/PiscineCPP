@@ -2,29 +2,35 @@
 
 ScavTrap::ScavTrap(void):ClapTrap()
 {
+    int _scavenergyPoints;
+
     std::cout << "Default constructor ScavTrap called" << std::endl;
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
-    this->_scavenergyPoints = this->_energyPoints;
+    _scavenergyPoints = this->_energyPoints;
 }
 
 ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 {
+    int _scavenergyPoints;
+
     std::cout << "Constructor ScavTrap with name called" << std::endl;
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
-    this->_scavenergyPoints = this->_energyPoints;
+    _scavenergyPoints = this->_energyPoints;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src):ClapTrap(src)
 {
+    int _scavenergyPoints;
+
     std::cout << "Copy constructor ScavTrap called" << std::endl;
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
-    this->_scavenergyPoints = this->_energyPoints;
+    _scavenergyPoints = this->_energyPoints;
 }
 
 ScavTrap::~ScavTrap()
