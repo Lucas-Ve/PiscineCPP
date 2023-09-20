@@ -1,6 +1,8 @@
 # ifndef BRAIN_H
 #define BRAIN_H
 
+#include <iostream>
+
 class Brain
 {
 private:
