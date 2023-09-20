@@ -30,7 +30,7 @@ Animal & Animal::operator=(Animal const & rhs)
 
 void    Animal::makeSound(void)const
 {
-    std::cout << "this animal " <<  this->getType() << " do animal sound."<< std::endl;
+    std::cout << this->getType() << " do no sound."<< std::endl;
 }
 
 std::string Animal::getType(void)const
