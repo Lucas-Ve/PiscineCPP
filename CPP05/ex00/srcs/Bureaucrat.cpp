@@ -10,9 +10,10 @@ Bureaucrat::Bureaucrat(std::string const name, int grade):_name(name)
 {
     std::cout << "Constructor with name, grade Bureaucrat" << std::endl;
     if (grade < 1)
-        Bureaucrat::GradeToHighException();
+        throw(Bureaucrat::GradeToHighException());
     else if (grade > 150)
-        Bureaucrat::GradeToLowException();
+        throw(Bureaucrat::GradeToLowException());
+    this->_grade = grade;
     
 }
 
@@ -42,6 +43,20 @@ std::string Bureaucrat::getName(void)const
 int Bureaucrat::getGrade(void)const
 {
     return (this->_grade);
+}
+
+void Bureaucrat::downGrade(void)
+{
+    if (this->_grade + 1 > 150)
+        throw(Bureaucrat::GradeToLowException());
+    this->_grade++;
+}
+
+void Bureaucrat::upGrade(void)
+{
+    if (this->_grade - 1 < 1)
+        throw(Bureaucrat::GradeToHighException());
+    this->_grade--;
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs)
