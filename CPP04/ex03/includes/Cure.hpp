@@ -12,7 +12,7 @@ public:
     Cure(Cure const &src);
     ~Cure();
 
-    Cure &operator=(Cure const &src);
+    Cure &operator=(Cure const &rhs);
 
     AMateria *clone()const override;
     void use(ICharacter &target);
