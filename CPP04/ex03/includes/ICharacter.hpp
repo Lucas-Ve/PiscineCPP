@@ -3,6 +3,8 @@
 
 #include "../includes/AMateria.hpp"
 
+class AMateria;
+
 class ICharacter
 {
 public:

@@ -1,5 +1,5 @@
-# ifndef Cure_H
-#define Cure_H
+# ifndef CURE_H
+#define CURE_H
 
 #include "../includes/AMateria.hpp"
 
@@ -14,7 +14,7 @@ public:
 
     Cure &operator=(Cure const &rhs);
 
-    AMateria *clone()const override;
+    AMateria *clone()const;
     void use(ICharacter &target);
 };
 

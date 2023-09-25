@@ -14,7 +14,7 @@ public:
 
     Ice &operator=(Ice const &src);
 
-    AMateria *clone()const override;
+    AMateria *clone()const;
     void use(ICharacter &target);
 };
 

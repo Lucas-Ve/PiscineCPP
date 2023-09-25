@@ -1,6 +1,6 @@
 .PHONY:		fclean, all, clear, clean, re
 
-NAME					=	Abstractclass
+NAME					=	InterfaceRecap
 
 CMP						=	c++
 FLG						=	-Wall -Wextra -Werror -std=c++98
@@ -8,11 +8,11 @@ RM						=	rm -rf
 BUILD_DIR				= 	build/
 
 INC_DIR					=	includes
-INC_FILE				= 	
+INC_FILE				= 	AMateria Character Cure Ice ICharacter MateriaSource IMateriaSource
 INC						= 	$(addsuffix .hpp, $(addprefix $(INC_DIR)/, $(INC_FILE)))
 
 SRCS_DIR				=	srcs
-SRCS_FILE				=	main
+SRCS_FILE				=	main AMateria Character Cure Ice MateriaSource
 SRCS					=  	$(addsuffix .cpp, $(addprefix $(SRCS_DIR)/, $(SRCS_FILE)))
 
 OBJS			    	= 	$(SRCS:%.cpp=$(BUILD_DIR)%.o)
