@@ -4,22 +4,32 @@ Character::Character(void){}
 
 Character::Character(std::string const name): _name(name)
 {
-    this->ptr = 0;
     for(int i = 0; i < 4; i++)
     {
         this->_inventory[i] = 0;
+    }
+    for(int i = 0; i < 4; i++)
+    {
+        this->_floorInventory[i] = 0;
     }
 }
 
 Character::Character(Character const &src): _name(src.getName())
 {
-    this->ptr = 0;
+    std::cout << "here\n";
     for(int i = 0; i < 4; i++)
     {
         if (src._inventory[i])
             this->_inventory[i] = src._inventory[i]->clone();
         else 
             this->_inventory[i] = 0;
+    }
+    for(int i = 0; i < 4; i++)
+    {
+        if (src._floorInventory[i])
+            this->_floorInventory[i] = src._floorInventory[i]->clone();
+        else 
+            this->_floorInventory[i] = 0;
     }
 }
 
@@ -28,14 +38,22 @@ Character::~Character()
     for(int i = 0; i < 4; i++)
     {
         if(this->_inventory[i])
+        {
             delete (this->_inventory[i]);
+        }
     }
-    if(this->ptr)
-        delete this->ptr;
+    for(int i = 0; i < 4; i++)
+    {
+        if(this->_floorInventory[i])
+        {
+            delete (this->_floorInventory[i]);
+        }
+    }
 }
 
 Character   & Character::operator=(Character const &rhs)
 {
+
     for(int i = 0; i < 4; i++)
     {
         if(this->_inventory[i])
@@ -44,7 +62,17 @@ Character   & Character::operator=(Character const &rhs)
             this->_inventory[i] = 0;
         }
         if (rhs._inventory[i])
-            this->_inventory[i] = rhs._inventory[i]->clone();
+            this->_inventory[i] = (rhs._inventory[i])->clone();
+    }
+    for(int i = 0; i < 4; i++)
+    {
+        if(this->_floorInventory[i])
+        {
+            delete (this->_floorInventory[i]);
+            this->_floorInventory[i] = 0;
+        }
+        if (rhs._floorInventory[i])
+            this->_floorInventory[i] = rhs._floorInventory[i]->clone();
     }
     return (*this);
 }
@@ -70,6 +98,18 @@ void    Character::equip(AMateria *m)
         }
         if (i >= 4)
         {
+            for (i = 0; i < 4; i++)
+            {
+                if (this->_floorInventory[i] == NULL)
+                {
+                    this->_floorInventory[i] = m;
+                    std::cout << "Materia " << m->getType() << " was drop on the floor !" << std::endl;
+                    break;
+                }
+            }
+        }
+        if (i >= 4)
+        {
             std::cout << this->_name << " can't equip more than 4 Materia" << std::endl;
             delete m;
         }
@@ -80,16 +120,18 @@ void    Character::equip(AMateria *m)
 
 void    Character::unequip(int idx)
 {
+    int i = 0;
     if (idx >= 0 && idx < 4 && this->_inventory[idx])
     {
-        if (this->ptr != NULL)
+        for (i = 0; i < 4; i++)
         {
-            std::cout << "sdfsdf\n";
-            delete (this->ptr);
-            this->ptr = 0;
+            if (this->_floorInventory[i] == NULL)
+            {
+                this->_floorInventory[i] = this->_inventory[idx];//->clone();
+                break;
+            }
         }
-        this->ptr = this->_inventory[idx]->clone();
-        std::cout << this->_name << " unequipped " << ptr->getType() << " at slot "<< idx << "\n";
+        std::cout << this->_name << " unequipped " << this->_floorInventory[i]->getType() << " at slot "<< idx << "\n";
         this->_inventory[idx] = 0;
     }
 }
@@ -98,4 +140,6 @@ void    Character::use(int idx, ICharacter &target)
 {
     if (idx >= 0 && idx < 4 && this->_inventory[idx])
         this->_inventory[idx]->use(target);
+    else
+        std::cout << "Nothing found to use at index " << idx << std::endl;
 }

@@ -8,12 +8,12 @@ class Character : public ICharacter
 private:
     std::string _name;
     AMateria *_inventory[4];
-    AMateria *ptr;
+    AMateria *_floorInventory[4];
 public:
     Character(void);
     Character(Character const &src);
     Character(std::string const name);
-    virtual ~Character();
+    ~Character();
 
     Character &operator=(Character const &rhs);
 

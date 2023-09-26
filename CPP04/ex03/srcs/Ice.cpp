@@ -20,7 +20,7 @@ Ice & Ice::operator=(Ice const &rhs)
 
 AMateria *Ice::clone()const
 {
-    Ice	*ice = new Ice;
+    Ice	*ice = new Ice(*this);
 	return (ice);
 }
 
