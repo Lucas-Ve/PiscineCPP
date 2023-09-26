@@ -10,7 +10,7 @@ private:
 public:
     Ice(void);
     Ice(Ice const &src);
-    ~Ice();
+    virtual ~Ice();
 
     Ice &operator=(Ice const &src);
 

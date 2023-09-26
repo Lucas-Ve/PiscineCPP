@@ -10,7 +10,7 @@ private:
 public:
     Cure(void);
     Cure(Cure const &src);
-    ~Cure();
+    virtual ~Cure();
 
     Cure &operator=(Cure const &rhs);
 

@@ -39,14 +39,18 @@ MateriaSource & MateriaSource::operator=(MateriaSource const &rhs)
 
 void    MateriaSource::learnMateria(AMateria *mat)
 {
-    for(int i = 0; i < 4; i++)
+    int i = 0;
+    for(i = 0; i < 4; i++)
     {
         if(this->_materiaInventory[i] == NULL)
         {
-            this->_materiaInventory[i] = mat;
+            this->_materiaInventory[i] = mat->clone();
+            delete (mat);
             break;
         }   
     }
+    if (i >= 4)
+        delete mat;
 }
 
 AMateria * MateriaSource::createMateria(std::string const &type)
