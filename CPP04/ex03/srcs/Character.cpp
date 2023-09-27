@@ -126,7 +126,7 @@ void    Character::unequip(int idx)
         {
             if (this->_floorInventory[i] == NULL)
             {
-                this->_floorInventory[i] = this->_inventory[idx];//->clone();
+                this->_floorInventory[i] = this->_inventory[idx];
                 break;
             }
         }
