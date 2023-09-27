@@ -16,7 +16,6 @@ Character::Character(std::string const name): _name(name)
 
 Character::Character(Character const &src): _name(src.getName())
 {
-    std::cout << "here\n";
     for(int i = 0; i < 4; i++)
     {
         if (src._inventory[i])
