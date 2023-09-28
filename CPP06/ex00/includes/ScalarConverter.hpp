@@ -2,6 +2,7 @@
 #define SCALARCONVERTER_H
 
 #include <iostream>
+#include <cstdlib>
 
 class ScalarConverter
 {
