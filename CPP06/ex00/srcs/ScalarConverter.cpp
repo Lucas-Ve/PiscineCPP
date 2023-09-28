@@ -20,6 +20,8 @@ void ScalarConverter::convertToChar(std::string argv1)
     int i = 0;
     while (argv1[i])
     {
+        while (argv1[i] == '-' || argv1[i] == '+')
+            i++;
         if(std::isdigit(argv1[i]))
             i++;
         else if ((argv1[i] == 'f' && argv1[i + 1] == '\0') || (argv1[i] == '.' && (argv1[i + 1] == '\0' || argv1[i + 1] == 'f' || std::isdigit(argv1[i + 1]))))
@@ -44,18 +46,22 @@ void ScalarConverter::convertToInt(std::string argv1)
     int i = 0;
     while (argv1[i])
     {
+        while (argv1[i] == '-' || argv1[i] == '+')
+            i++;
         if(std::isdigit(argv1[i]))
             i++;
         else if ((argv1[i] == 'f' && argv1[i + 1] == '\0') || (argv1[i] == '.' && (argv1[i + 1] == '\0' || argv1[i + 1] == 'f' || std::isdigit(argv1[i + 1]))))
             i++;
         else
         {
-            std::cout << "char: impossible" << std::endl;
+            std::cout << "int: impossible" << std::endl;
             return;
         }
     }
     int result = std::atoi(argv1.c_str());
-    if (argv1 == "nan" || (result == 0 && argv1 != "0" && argv1 != "0.0f" && argv1 != "0.0"))
+    if (result == -1 && argv1 != "-1")
+        std::cout << "int: impossible" << std::endl;
+    else if (argv1 == "nan" || (result == 0 && argv1 != "0" && argv1 != "0.0f" && argv1 != "0.0"))
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << result << std::endl;
@@ -96,13 +102,15 @@ void ScalarConverter::convertToFloat(std::string argv1)
     int i = 0;
     while (argv1[i])
     {
+        while (argv1[i] == '-' || argv1[i] == '+')
+            i++;
         if(std::isdigit(argv1[i]))
             i++;
         else if ((argv1[i] == 'f' && argv1[i + 1] == '\0') || (argv1[i] == '.' && (argv1[i + 1] == '\0' || argv1[i + 1] == 'f' || std::isdigit(argv1[i + 1]))))
             i++;
         else
         {
-            std::cout << "char: impossible" << std::endl;
+            std::cout << "float: impossible" << std::endl;
             return;
         }
     }
@@ -111,7 +119,6 @@ void ScalarConverter::convertToFloat(std::string argv1)
     if (result == static_cast<int>(result))
         std::cout << ".0";
     std::cout << "f" << std::endl;
-
 }
 
 void ScalarConverter::convertToDobule(std::string argv1)
@@ -149,13 +156,15 @@ void ScalarConverter::convertToDobule(std::string argv1)
     int i = 0;
     while (argv1[i])
     {
+        while (argv1[i] == '-' || argv1[i] == '+')
+            i++;
         if(std::isdigit(argv1[i]))
             i++;
         else if ((argv1[i] == 'f' && argv1[i + 1] == '\0') || (argv1[i] == '.' && (argv1[i + 1] == '\0' || argv1[i + 1] == 'f' || std::isdigit(argv1[i + 1]))))
             i++;
         else
         {
-            std::cout << "char: impossible" << std::endl;
+            std::cout << "double: impossible" << std::endl;
             return;
         }
     }
