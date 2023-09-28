@@ -7,7 +7,6 @@
 class ScalarConverter
 {
 private:
-    /* data */
 public:
     ScalarConverter(void);
     ScalarConverter(ScalarConverter const &src);
