@@ -1,6 +1,6 @@
 .PHONY:		fclean, all, clear, clean, re
 
-NAME					=	ex01
+NAME					=	ex02
 
 CMP						=	c++
 FLG						=	-Wall -Wextra -Werror -std=c++98
