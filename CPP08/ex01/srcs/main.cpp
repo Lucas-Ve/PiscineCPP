@@ -53,8 +53,10 @@ int main()
 	// span3.addNumber(vect.begin(), vect.end());
 	// std::cout << span3.shortestSpan() << std::endl;
     std::vector<int> range(5, 10);
-    range[2] = 40;
+    // range[2] = 40;
     span3.addNumber(range.begin(), range.end());
-    std::cout << span3.longestSpan() << std::endl;
+    // std::cout << span3.longestSpan() << std::endl;
+    for (std::vector<int>::iterator it = range.begin() ; it != range.end(); it++)
+        std::cout << *it << std::endl;
     return 0;
 }
