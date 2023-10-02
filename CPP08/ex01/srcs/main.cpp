@@ -42,21 +42,22 @@ int main()
     //         std::cout << e.what() << std::endl; 
     //     }
     // }
-    Span				span3(5);
-	// std::vector<int>	vect;
-
-	// vect.push_back(25);
-	// vect.push_back(5);
-	// vect.push_back(13);
-	// vect.push_back(90);
-	// vect.push_back(-2);
-	// span3.addNumber(vect.begin(), vect.end());
-	// std::cout << span3.shortestSpan() << std::endl;
-    std::vector<int> range(5, 10);
-    // range[2] = 40;
-    span3.addNumber(range.begin(), range.end());
-    // std::cout << span3.longestSpan() << std::endl;
-    for (std::vector<int>::iterator it = range.begin() ; it != range.end(); it++)
-        std::cout << *it << std::endl;
+    try
+    {
+        Span span3(6);
+        span3.addNumber(6);
+        std::vector<int> range(5, 10);
+        // range[2] = 40;
+        // std::cout << span3.shortestSpan() << std::endl;
+        span3.addNumber(range.begin(), range.end());
+        std::cout << span3.longestSpan() << std::endl;
+        // for (std::vector<int>::iterator it = range.begin(); it != range.end(); it++)
+        //     std::cout << *it << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
     return 0;
 }

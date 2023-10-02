@@ -55,7 +55,7 @@ void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterato
 {
     std::vector<int> add(begin, end);
 
-    if (add.size() > this->_sizeSpan)
+    if (add.size() + this->_arraySpan.size() > this->_sizeSpan)
         throw (Span::NoSpaceEnough());
     else
         std::copy(add.begin(), add.end(), std::back_inserter(this->_arraySpan));
