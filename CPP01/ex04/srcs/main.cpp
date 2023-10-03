@@ -30,6 +30,8 @@ int main(int argc, char *argv[])
                 pos += s2.length();
             }
             ofs << str;
+            if (!ifs.eof())
+                ofs << std::endl;
         }
         ifs.close();
         ofs.close();
