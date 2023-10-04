@@ -46,7 +46,8 @@ int main(void)
 			std::cout << robotomy << std::endl;
 			std::cout << pardon << std::endl;
 			shrubbery.beSigned(jon);
-			mike.executeForm(shrubbery);
+			// mike.executeForm(shrubbery);
+			shrubbery.execute(mike);
 		}
 		catch (std::exception &e)
 		{
@@ -67,17 +68,20 @@ int main(void)
 			std::cout << pardon << std::endl;
 			
 			std::cout << "\n --------------------- \n\n";
-			steve.executeForm(shrubbery);
+			// steve.executeForm(shrubbery);
+			// std::cout << "\n --------------------- \n\n";
+			// steve.executeForm(robotomy);
+			// std::cout << "\n --------------------- \n\n";
+			// steve.executeForm(robotomy);
+			// std::cout << "\n --------------------- \n\n";
+			// steve.executeForm(robotomy);
+			// std::cout << "\n --------------------- \n\n";
+			// steve.executeForm(robotomy);
+			// std::cout << "\n --------------------- \n\n";
+			// steve.executeForm(pardon);
+			shrubbery.execute(steve);
 			std::cout << "\n --------------------- \n\n";
-			steve.executeForm(robotomy);
-			std::cout << "\n --------------------- \n\n";
-			steve.executeForm(robotomy);
-			std::cout << "\n --------------------- \n\n";
-			steve.executeForm(robotomy);
-			std::cout << "\n --------------------- \n\n";
-			steve.executeForm(robotomy);
-			std::cout << "\n --------------------- \n\n";
-			steve.executeForm(pardon);
+			pardon.execute(steve);
 		}
 		catch (std::exception &e)
 		{

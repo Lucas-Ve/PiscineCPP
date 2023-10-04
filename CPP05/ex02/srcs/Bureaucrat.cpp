@@ -30,7 +30,6 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
 {
-    this->_name = rhs.getName();
     this->_grade = rhs.getGrade();
     return (*this);
 }
@@ -78,7 +77,7 @@ void Bureaucrat::executeForm(Form const &form)
     try
     {
         form.execute(*this);
-        std::cout << this->_name << " execute " << form.getName() << ".\n";
+        // std::cout << this->_name << " execute " << form.getName() << ".\n";
     }
     catch(const std::exception& e)
     {

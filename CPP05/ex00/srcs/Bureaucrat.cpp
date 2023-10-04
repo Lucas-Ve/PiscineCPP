@@ -25,12 +25,11 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src)
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Destructor Bureaucrat" << std::endl;
+    // std::cout << "Destructor Bureaucrat" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
 {
-    this->_name = rhs.getName();
     this->_grade = rhs.getGrade();
     return (*this);
 }
