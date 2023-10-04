@@ -20,9 +20,23 @@ std::string PresidentialPardonForm::getTarget(void)const
     return (this->_target);
 }
 
-void PresidentialPardonForm::createForm(void)const
+// void PresidentialPardonForm::createForm(void)const
+// {
+//     std::cout << "Zaphod Beeblebrox forgive " << this->getTarget() << ".\n";
+// }
+
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    std::cout << "Zaphod Beeblebrox forgive " << this->getTarget() << ".\n";
+    if (this->getSigned() == 0)
+        throw(Form::FormNotSign());
+    if (executor.getGrade() > this->getGradeExec())
+        throw(Form::GradeToLowException());
+    else
+    {
+        // std::cout << "Form can be execute by " << executor.getName() << ".\n";
+        std::cout << "Zaphod Beeblebrox forgive " << this->getTarget() << ".\n";
+        std::cout << executor.getName() << " execute " << this->getName() << ".\n";
+    }
 }
 
 std::ostream	&operator<<(std::ostream &o, PresidentialPardonForm const &rhs)

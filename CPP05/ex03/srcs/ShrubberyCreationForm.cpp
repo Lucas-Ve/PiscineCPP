@@ -21,25 +21,55 @@ std::string ShrubberyCreationForm::getTarget(void)const
     return (this->_target);
 }
 
-void ShrubberyCreationForm::createForm(void)const
-{
-    std::ofstream f;
+// void ShrubberyCreationForm::createForm(void)const
+// {
+//     std::ofstream f;
 
-    f.open((this->_target + "_shrubbery").c_str());
-    if (!f.is_open())
-        std::cout << "Error : Cannot open the file !" << std::endl;
+//     f.open((this->_target + "_shrubbery").c_str());
+//     if (!f.is_open())
+//         std::cout << "Error : Cannot open the file !" << std::endl;
+//     else
+//     {
+//         f << "    ###" << std::endl;
+//         f << "   #o###" << std::endl;
+//         f << " #####o###" << std::endl;
+//         f << "#o#|#|#/###" << std::endl;
+//         f << " ###||/#o#" << std::endl;
+//         f << "  # }|{  #" << std::endl;
+//         f << "    }|{" << std::endl;
+//     }
+//     f.close();
+//     std::cout << "Shrubbery create !\n"; 
+// }
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+    if (this->getSigned() == 0)
+        throw(Form::FormNotSign());
+    if (executor.getGrade() > this->getGradeExec())
+        throw(Form::GradeToLowException());
     else
     {
-        f << "    ###" << std::endl;
-        f << "   #o###" << std::endl;
-        f << " #####o###" << std::endl;
-        f << "#o#|#|#/###" << std::endl;
-        f << " ###||/#o#" << std::endl;
-        f << "  # }|{  #" << std::endl;
-        f << "    }|{" << std::endl;
+        // std::cout << "Form can be execute by " << executor.getName() << ".\n";
+        std::ofstream f;
+
+        f.open((this->_target + "_shrubbery").c_str());
+        if (!f.is_open())
+            std::cout << "Error : Cannot open the file !" << std::endl;
+        else
+        {
+            f << "    ###" << std::endl;
+            f << "   #o###" << std::endl;
+            f << " #####o###" << std::endl;
+            f << "#o#|#|#/###" << std::endl;
+            f << " ###||/#o#" << std::endl;
+            f << "  # }|{  #" << std::endl;
+            f << "    }|{" << std::endl;
+        }
+        f.close();
+        std::cout << "Shrubbery create !\n";
+        std::cout << executor.getName() << " execute " << this->getName() << ".\n";
     }
-    f.close();
-    std::cout << "Shrubbery create !\n"; 
 }
 
 std::ostream	&operator<<(std::ostream &o, ShrubberyCreationForm const &rhs)

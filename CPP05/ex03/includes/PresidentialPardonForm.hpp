@@ -17,7 +17,8 @@ public:
     PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 
     std::string getTarget(void)const;
-    void createForm(void)const;
+    // void createForm(void)const;
+    void execute(Bureaucrat const & executor) const;
 };
 
 std::ostream &operator<<(std::ostream &o, PresidentialPardonForm const &rhs);
