@@ -65,6 +65,8 @@
         "string_view": "cpp",
         "ranges": "cpp",
         "sstream": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "map": "cpp",
+        "numbers": "cpp"
     }
 }
