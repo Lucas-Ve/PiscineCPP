@@ -119,12 +119,25 @@ void BitcoinExchange::verifInput(void)
     }
     if (!verifValue())
         return;
+    if (!findBtc())
+        return;
+}
+
+bool BitcoinExchange::findBtc(void)
+{
+    if (this->data.empty())
+        return false;
+    std::map<std::string, double>::iterator it = this->data.upper_bound(this->_dateInput);
+		if (it != this->data.end())
+	        this->_btcPrice = *(--it);
+    std::cout << this->_dateInput << " => " << this->_doubleValueInput << " = " << this->_doubleValueInput * this->_btcPrice.second << std::endl;
+    return true;
 }
 
 void BitcoinExchange::execInput(std::string const inputPath)
 {
     int i = 0;
-    std::ifstream file(inputPath);
+    std::ifstream file(inputPath.c_str());
     if (!file.is_open())
     {
         this->_error = 1;

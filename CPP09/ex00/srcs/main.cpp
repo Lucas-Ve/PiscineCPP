@@ -8,6 +8,6 @@ int main(int ac, char *av[])
 		return (EXIT_FAILURE);
     }
     BitcoinExchange btc;
-    
+    btc.execInput(av[1]);
     return (0);
 }
