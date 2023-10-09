@@ -20,7 +20,7 @@ void ScalarConverter::convertToChar(std::string argv1)
     int i = 0;
     while (argv1[i])
     {
-        while (argv1[i] == '-' || argv1[i] == '+')
+        if (argv1[i] == '-' || argv1[i] == '+')
             i++;
         if(std::isdigit(argv1[i]))
             i++;
@@ -46,7 +46,7 @@ void ScalarConverter::convertToInt(std::string argv1)
     int i = 0;
     while (argv1[i])
     {
-        while (argv1[i] == '-' || argv1[i] == '+')
+        if (argv1[i] == '-' || argv1[i] == '+')
             i++;
         if(std::isdigit(argv1[i]))
             i++;
@@ -102,7 +102,7 @@ void ScalarConverter::convertToFloat(std::string argv1)
     int i = 0;
     while (argv1[i])
     {
-        while (argv1[i] == '-' || argv1[i] == '+')
+        if (argv1[i] == '-' || argv1[i] == '+')
             i++;
         if(std::isdigit(argv1[i]))
             i++;
@@ -156,7 +156,7 @@ void ScalarConverter::convertToDobule(std::string argv1)
     int i = 0;
     while (argv1[i])
     {
-        while (argv1[i] == '-' || argv1[i] == '+')
+        if (argv1[i] == '-' || argv1[i] == '+')
             i++;
         if(std::isdigit(argv1[i]))
             i++;
