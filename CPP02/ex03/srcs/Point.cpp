@@ -8,9 +8,8 @@ Point::Point(const float x, const float y):_x(x), _y(y)
 {
 }
 
-Point::Point(Point const & src)
+Point::Point(Point const & src):_x(src.getX()), _y(src.getY())
 {
-    *this = src;
 }
 
 Point::~Point()
@@ -19,8 +18,7 @@ Point::~Point()
 
 Point & Point::operator=(Point const & rhs)
 {
-    this->_x = rhs._x;
-    this->_y = rhs._y;
+    (void)rhs;
     return (*this);
 }
 
