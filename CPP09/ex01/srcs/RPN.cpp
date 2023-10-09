@@ -30,7 +30,7 @@ void RPN::ReversePolishNotation(std::string const &str)
     {
         if(std::isdigit(token[0]))
             stack.push(std::atoi(token.c_str()));
-        else if ((token[0] == '-' || token[0] == '+' || token[0] == '*' || token[0] == '/'))
+        else if ((token == "-" || token == "+" || token == "*" || token == "/"))
         {
             if (stack.size() < 2)
                 throw(RPN::InvalidArgException());
