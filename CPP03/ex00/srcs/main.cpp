@@ -25,18 +25,9 @@ int	main(void)
 	claptrap1.attack(s2);
 	claptrap1.attack(s2);
 	claptrap1.attack(s2);
-	// claptrap2.takeDamage(4);
-	// claptrap2.beRepaired(3);
-	// claptrap2.beRepaired(18);
-
-	// claptrap2.attack(s1);
-	// claptrap1.takeDamage(9);
-	// claptrap2.attack(s1);
-	// claptrap1.takeDamage(9);
-	// claptrap2.attack(s1);
-
-	// claptrap1.beRepaired(3);
-	// claptrap1.beRepaired(64);
+	claptrap2.takeDamage(4);
+	claptrap2.beRepaired(3);
+	claptrap1.beRepaired(3);
     std::cout << "Biggie : "<< claptrap1 << std::endl;
     std::cout << "Tupac : "<< claptrap2 << std::endl;
 	std::cout << std::endl;
@@ -47,7 +38,5 @@ int	main(void)
 
 	std::cout << "test --> " << test << std::endl;
 	std::cout << "test2 --> " << test2 << std::endl;
-	test2 = test;
-	std::cout << "test2 apres assignation --> " << test2 << std::endl;
 	return (0); 
 }
