@@ -16,17 +16,27 @@ void printContainer(T &container)
         std::cout << *i << " ";
 }
 
+// template <typename T>
+// void insetSort(T &container)
+// {
+//     for (typename T::iterator i = container.begin() + 1; i != container.end(); i++)
+//     {
+//         for (typename T::iterator j = i; j != container.begin() && *j < *(j - 1); j--)
+//         {
+//             std::swap(*j, *(j - 1));
+//         }
+//     }
+// }
+
 template <typename T>
 void insetSort(T &container)
 {
-    for (typename T::iterator i = container.begin() + 1; i != container.end(); i++)
+    for (typename T::iterator i = ++container.begin(); i != container.end(); i++)
     {
-        for (typename T::iterator j = i; j != container.begin() && *j < *i; j--)
+        for (typename T::iterator j = i; j != container.begin() && *--j > *++j;)
         {
-            if (*j < *i)
-            {
-                t tmp;
-            }
+            typename T::iterator position = j;
+            std::swap(*--j, *position);
         }
     }
 }
@@ -36,7 +46,7 @@ void MergeInsetsort(T &container)
 {
     if (container.size() <= 64)
     {
-        //algo sort insert
+        insetSort(container);
         return;
     }
     int posMid = container.size() / 2;

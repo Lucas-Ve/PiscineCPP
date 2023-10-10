@@ -23,9 +23,13 @@ int main(int ac, char *av[])
         tab2.push_back(std::atoi(av[i]));
     }
     std::cout << "before : ";
-    ::printContainer(tab);
+    ::printContainer(tab2);
     std::cout << std::endl;
-    ::MergeInsetsort(tab);
-    ::MergeInsetsort(tab2);
+    // ::MergeInsetsort(tab);
+    // ::MergeInsetsort(tab2);
+    ::insetSort(tab2);
+    std::cout << "after : ";
+    ::printContainer(tab2);
+    std::cout << std::endl;
     return (0);
 }
