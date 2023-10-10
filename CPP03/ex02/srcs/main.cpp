@@ -33,7 +33,7 @@ int	main(void)
 	std::cout << std::endl;
 
 	// Repair over max hp
-	fragtrap.beRepaired(18);
+	// fragtrap.beRepaired(18);
 
 	// Take damage
 	fragtrap.takeDamage(50);
