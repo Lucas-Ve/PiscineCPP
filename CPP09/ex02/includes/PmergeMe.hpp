@@ -2,12 +2,14 @@
 #define PMERGEME_HPP
 
 #include <vector>
+#include <algorithm>
 #include <iostream>
 #include <exception>
 #include <cstdlib>
 #include <deque>
 #include <iterator>
 #include <list>
+#include <ctime>
 
 template <typename T>
 void printContainer(T &container)
@@ -15,18 +17,6 @@ void printContainer(T &container)
     for (typename T::iterator i = container.begin(); i != container.end(); ++i)
         std::cout << *i << " ";
 }
-
-// template <typename T>
-// void insetSort(T &container)
-// {
-//     for (typename T::iterator i = container.begin() + 1; i != container.end(); i++)
-//     {
-//         for (typename T::iterator j = i; j != container.begin() && *j < *(j - 1); j--)
-//         {
-//             std::swap(*j, *(j - 1));
-//         }
-//     }
-// }
 
 template <typename T>
 void insetSort(T &container)
@@ -50,12 +40,15 @@ void MergeInsetsort(T &container)
         return;
     }
     int posMid = container.size() / 2;
-    T leftContainer(container.begin(), posMid);
-    T rightContainer(posMid, container.end());
+    typename T::iterator midle = container.begin();
+    for (int i = 0; i <= posMid; i++)
+        midle++;
+    T leftContainer(container.begin(), midle);
+    T rightContainer(midle, container.end());
 
     MergeInsetsort(leftContainer);
     MergeInsetsort(rightContainer);
-    // merge()
+    std::merge(leftContainer.begin(), leftContainer.end(), rightContainer.begin(), rightContainer.end(), container.begin());
 }
 
 #endif
