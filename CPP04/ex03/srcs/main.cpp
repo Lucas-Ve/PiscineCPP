@@ -21,7 +21,7 @@ int main()
         delete bob;
         delete me;
         delete src;
-        std::cout << "==============================================" << std::endl << std::endl;
+        std::cout << "=============================================" << std::endl << std::endl;
 
 	// MateriaSource* src = new MateriaSource();
     // src->learnMateria(new Ice());
