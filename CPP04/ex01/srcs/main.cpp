@@ -23,7 +23,5 @@ int main()
 		delete animals[4 - i];
 		i--;
 	}
-	// Dog	a;
-	// Dog	b(a);
     return 0;
 }

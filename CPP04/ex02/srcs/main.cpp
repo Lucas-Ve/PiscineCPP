@@ -6,6 +6,7 @@
 
 int main()
 {
+	//AAnimal a;//impossible
     // AAnimal	*animals[4];
 	Cat *cat_brain = new Cat();
 	// int				i;
@@ -21,14 +22,13 @@ int main()
 	// }
 	cat_brain->get_brain()->_ideas[0] = "lucas";
 	Cat *cat_brain2 = new Cat(*cat_brain);
-	// std::cout << "1" << cat_brain->get_brain()->_ideas[0] << std::endl;
-	// std::cout << "2" << cat_brain2->get_brain()->_ideas[0] << std::endl;
-	// *cat_brain = *cat_brain2;
 	std::cout << "1" << cat_brain->get_brain()->_ideas[0] << std::endl;
 	std::cout << "2" << cat_brain2->get_brain()->_ideas[0] << std::endl;
 	cat_brain->get_brain()->_ideas[0] = "yo";
-	// std::cout << "1" << cat_brain->_type << std::endl;
+	std::cout << "1" << cat_brain->get_brain()->_ideas[0] << std::endl;
 	std::cout << "2" << cat_brain2->get_brain()->_ideas[0] << std::endl;
+	delete cat_brain;
+	delete cat_brain2;
 	// while (i)
 	// {
 	// 	delete animals[4 - i];

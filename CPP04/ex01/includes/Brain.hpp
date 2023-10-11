@@ -11,11 +11,9 @@ private:
 public:
     Brain(void);
     Brain(Brain const &src);
-    // Brain(std::string const name);
     ~Brain(void);
 
     Brain & operator=(Brain const & rhs);
-
 };
 
 #endif
