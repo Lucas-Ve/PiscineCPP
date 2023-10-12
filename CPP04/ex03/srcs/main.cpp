@@ -5,7 +5,7 @@
 
 int main()
 {
-        std::cout << "================TEST SUBJECT=================" << std::endl;
+        std::cout << "================TEST SUBJECT===============" << std::endl;
         IMateriaSource *src = new MateriaSource();
         src->learnMateria(new Ice());
         src->learnMateria(new Cure());
