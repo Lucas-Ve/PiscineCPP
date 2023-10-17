@@ -21,9 +21,9 @@ Form * Intern::makeForm(std::string formName, std::string target)
     int i = 0;
     std::string form[3];
 
-    form[0] = "RobotomyRequestForm";
-    form[1] = "PresidentialPardonForm";
-    form[2] = "ShrubberyCreationForm";
+    form[0] = "robotomy request";
+    form[1] = "presidential pardon";
+    form[2] = "shrubbery creation";
 
     for (i = 0; i <= 2; i++)
     {

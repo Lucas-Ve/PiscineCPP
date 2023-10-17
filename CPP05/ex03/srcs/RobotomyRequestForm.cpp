@@ -20,18 +20,6 @@ std::string RobotomyRequestForm::getTarget(void)const
     return (this->_target);
 }
 
-// void RobotomyRequestForm::createForm(void)const
-// {
-//     static int sucess = 0;
-
-//     std::cout << "drilling machine noise !!!!!\n";
-//     if (sucess % 2 == 0)
-//         std::cout << this->getTarget() << " was robotized with sucess !\n";
-//     else
-//         std::cout << "The operation fail !\n";
-//     sucess++;
-// }
-
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     if (this->getSigned() == 0)
@@ -41,6 +29,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
     else
     {
         // std::cout << "Form can be execute by " << executor.getName() << ".\n";
+        std::cout << executor.getName() << " execute " << this->getName() << ".\n";
         static int sucess = 0;
 
         std::cout << "drilling machine noise !!!!!\n";
@@ -49,7 +38,6 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
         else
             std::cout << "The operation fail !\n";
         sucess++;
-        std::cout << executor.getName() << " execute " << this->getName() << ".\n";
     }
 }
 

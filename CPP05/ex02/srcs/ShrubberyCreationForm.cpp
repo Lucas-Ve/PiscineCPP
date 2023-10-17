@@ -21,27 +21,6 @@ std::string ShrubberyCreationForm::getTarget(void)const
     return (this->_target);
 }
 
-// void ShrubberyCreationForm::createForm(void)const
-// {
-//     std::ofstream f;
-
-//     f.open((this->_target + "_shrubbery").c_str());
-//     if (!f.is_open())
-//         std::cout << "Error : Cannot open the file !" << std::endl;
-//     else
-//     {
-//         f << "    ###" << std::endl;
-//         f << "   #o###" << std::endl;
-//         f << " #####o###" << std::endl;
-//         f << "#o#|#|#/###" << std::endl;
-//         f << " ###||/#o#" << std::endl;
-//         f << "  # }|{  #" << std::endl;
-//         f << "    }|{" << std::endl;
-//     }
-//     f.close();
-//     std::cout << "Shrubbery create !\n"; 
-// }
-
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if (this->getSigned() == 0)

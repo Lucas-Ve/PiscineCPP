@@ -20,18 +20,6 @@ std::string RobotomyRequestForm::getTarget(void)const
     return (this->_target);
 }
 
-// void RobotomyRequestForm::createForm(void)const
-// {
-//     static int sucess = 0;
-
-//     std::cout << "drilling machine noise !!!!!\n";
-//     if (sucess % 2 == 0)
-//         std::cout << this->getTarget() << " was robotized with sucess !\n";
-//     else
-//         std::cout << "The operation fail !\n";
-//     sucess++;
-// }
-
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     if (this->getSigned() == 0)

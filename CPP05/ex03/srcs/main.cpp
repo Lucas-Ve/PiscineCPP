@@ -16,7 +16,7 @@ int main()
 
 	try
 	{
-		Form* form = Tristan.makeForm("RobotomyRequestForm", "Bender");
+		Form* form = Tristan.makeForm("shrubbery creation", "Bender");
 		if (!form)
 			return (0);
 		Jerem.signForm(*form);

@@ -65,19 +65,6 @@ bool Form::getSigned()const
     return (this->_signed);
 }
 
-// void Form::execute(Bureaucrat const & executor) const
-// {
-//     if (this->_signed == 0)
-//         throw(Form::FormNotSign());
-//     if (executor.getGrade() > this->_gradeExec)
-//         throw(Form::GradeToLowException());
-//     else
-//     {
-//         std::cout << "Form can be execute by " << executor.getName() << ".\n";
-//         this->createForm();
-//     }
-// }
-
 std::ostream	&operator<<(std::ostream &o, Form const &rhs)
 {
 	o << "Form : "<< rhs.getName() << ", signed: " << rhs.getSigned() << ", sign grade: " << rhs.getGradeSign() << ", exec grade: " << rhs.getGradeExec();

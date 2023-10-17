@@ -20,11 +20,6 @@ std::string PresidentialPardonForm::getTarget(void)const
     return (this->_target);
 }
 
-// void PresidentialPardonForm::createForm(void)const
-// {
-//     std::cout << "Zaphod Beeblebrox forgive " << this->getTarget() << ".\n";
-// }
-
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
     if (this->getSigned() == 0)
@@ -34,8 +29,8 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
     else
     {
         // std::cout << "Form can be execute by " << executor.getName() << ".\n";
-        std::cout << "Zaphod Beeblebrox forgive " << this->getTarget() << ".\n";
         std::cout << executor.getName() << " execute " << this->getName() << ".\n";
+        std::cout << "Zaphod Beeblebrox forgive " << this->getTarget() << ".\n";
     }
 }
 
