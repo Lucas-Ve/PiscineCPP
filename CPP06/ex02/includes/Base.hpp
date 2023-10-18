@@ -7,7 +7,6 @@ class Base
 {
 private:
 public:
-    Base(void);
     virtual ~Base();
 };
 
