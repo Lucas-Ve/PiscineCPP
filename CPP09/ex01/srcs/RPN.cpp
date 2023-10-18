@@ -28,7 +28,7 @@ void RPN::ReversePolishNotation(std::string const &str)
 
     while (iss >> token)
     {
-        if(std::isdigit(token[0]))
+        if(std::isdigit(token[0]) && !token[1])
             stack.push(std::atoi(token.c_str()));
         else if ((token == "-" || token == "+" || token == "*" || token == "/"))
         {

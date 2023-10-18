@@ -11,7 +11,7 @@ void iter(T *arrayAdr, size_t sizeArray, void (*fuction)(T))
 }
 
 template<typename T>
-void PrintElements(T element)
+void PrintElements(T &element)
 {
     std::cout << element << " ";
 }

@@ -20,5 +20,4 @@ public:
     static void convertToDobule(std::string argv1);
 };
 
-
 #endif
