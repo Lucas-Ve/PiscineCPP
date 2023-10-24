@@ -4,7 +4,7 @@
 #include <iostream>
 
 template<typename T>
-void iter(T *arrayAdr, size_t sizeArray, void (*fuction)(T))
+void iter(T *arrayAdr, size_t sizeArray, void (*fuction)(T &))
 {
     for (size_t i = 0; i < sizeArray; i++)
         fuction(arrayAdr[i]);
