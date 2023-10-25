@@ -20,8 +20,6 @@ int main()
 
     std::vector<int>::iterator it_find_vec = easyfind(vec, 0);
     std::cout << "Search 0 : " << *it_find_vec << std::endl;
-    std::cout << "Previous of 0 in array is : " << *(it_find_vec - 1) << std::endl;
-
     try
     {
         std::cout << "Search 10000 : ";
@@ -35,5 +33,4 @@ int main()
 
     std::list<int>::iterator it_find_list = easyfind(list, -895);
     std::cout << "Search -895 : " << *it_find_list << std::endl; 
-    std::cout << "Previous of -895 in array is : " << *(--it_find_list) << std::endl;
 }
