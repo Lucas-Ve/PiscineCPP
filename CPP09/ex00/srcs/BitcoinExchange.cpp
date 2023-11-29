@@ -25,16 +25,8 @@ BitcoinExchange::BitcoinExchange(void)
 			continue;
 		}
 		std::string date = line.substr(0, pos);
-        // try 
-        // {
-            double value = std::atof(line.substr(pos + 1).c_str());
-            this->data.insert(std::make_pair(date, value));
-        // } 
-        // catch (...) 
-        // {
-        //     std::cerr << "Error: could not parse value : " << line.substr(pos + 1) << std::endl;
-        //     continue;
-        // }
+        double value = std::atof(line.substr(pos + 1).c_str());
+        this->data.insert(std::make_pair(date, value));
 	}
 	file.close();
 }
