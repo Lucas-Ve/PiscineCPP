@@ -64,7 +64,7 @@ bool BitcoinExchange::verifDate(void)
         years = atoi(this->_dateInput.substr(0, 4).c_str());
         months = atoi(this->_dateInput.substr(5, 2).c_str());
         days = atoi(this->_dateInput.substr(8, 2).c_str());
-        if (years < 0 || years > 2023 || months < 1 || months > 12 || days < 1 || days > 31)
+        if (years < 2009 || years > 2023 || months < 1 || months > 12 || days < 1 || days > 31)
             return false;
         else if ((months == 4 || months == 6 || months == 9 || months == 11) && days > 30)
             return false;
@@ -153,7 +153,7 @@ void BitcoinExchange::execInput(std::string const inputPath)
             this->_dateInput = this->_line.substr(0, posPipe);
             this->_valueInput = this->_line.substr(posPipe + 1);
             this->_doubleValueInput = std::atof(this->_valueInput.c_str());
-            if (this->_doubleValueInput == 0)
+            if (this->_doubleValueInput == 0 && this->_valueInput != " 0")
             {
                 std::cout << "Error: bad input => " << this->_line << std::endl;
                 continue;
