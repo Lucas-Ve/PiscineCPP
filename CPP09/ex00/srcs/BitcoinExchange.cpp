@@ -1,4 +1,5 @@
 #include "../includes/BitcoinExchange.hpp"
+#include <sstream>
 
 BitcoinExchange::BitcoinExchange(void)
 {
@@ -150,11 +151,29 @@ void BitcoinExchange::execInput(std::string const inputPath)
         }
         else
         {
+            int j = 0;
             this->_dateInput = this->_line.substr(0, posPipe);
             this->_valueInput = this->_line.substr(posPipe + 1);
-            this->_doubleValueInput = std::atof(this->_valueInput.c_str());
-            if (this->_doubleValueInput == 0 && this->_valueInput != " 0")
+            std::istringstream iss(this->_valueInput);
+            if (!(iss >> this->_doubleValueInput))
             {
+                std::cout << "ici" << std::endl;
+                std::cout << "Error: bad input => " << _valueInput << std::endl;
+                continue;
+            }
+            while (this->_valueInput[j])
+            {
+                if ((this->_valueInput[j] >= 'a' && this->_valueInput[j] >= 'z') || (this->_valueInput[j] >= 'A' && this->_valueInput[j] >= 'Z'))
+                {
+                    this->_error = 1;
+                    break;
+                }
+                j++;
+            }
+            this->_doubleValueInput = std::atof(this->_valueInput.c_str());
+            if ((this->_doubleValueInput == 0 && this->_valueInput != " 0" ) || this->getError() == 1)
+            {
+                this->_error = 0;
                 std::cout << "Error: bad input => " << this->_line << std::endl;
                 continue;
             }
