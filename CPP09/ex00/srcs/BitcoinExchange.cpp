@@ -123,7 +123,12 @@ bool BitcoinExchange::findBtc(void)
         return false;
     std::map<std::string, double>::iterator it = this->data.upper_bound(this->_dateInput);
 		if (it != this->data.end())
-	        this->_btcPrice = *(--it);
+        {
+            if (it != this->data.begin())
+	            this->_btcPrice = *(--it);
+            else
+                this->_btcPrice = *(it);
+        }
         else
         {
             it = this->data.end();
