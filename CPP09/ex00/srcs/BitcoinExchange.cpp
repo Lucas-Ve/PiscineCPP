@@ -124,6 +124,11 @@ bool BitcoinExchange::findBtc(void)
     std::map<std::string, double>::iterator it = this->data.upper_bound(this->_dateInput);
 		if (it != this->data.end())
 	        this->_btcPrice = *(--it);
+        else
+        {
+            it = this->data.end();
+            this->_btcPrice = *(--it);
+        }
     std::cout << this->_dateInput << " => " << this->_doubleValueInput << " = " << this->_doubleValueInput * this->_btcPrice.second << std::endl;
     return true;
 }
@@ -158,7 +163,6 @@ void BitcoinExchange::execInput(std::string const inputPath)
             std::istringstream iss(this->_valueInput);
             if (!(iss >> this->_doubleValueInput))
             {
-                std::cout << "ici" << std::endl;
                 std::cout << "Error: bad input => " << _valueInput << std::endl;
                 continue;
             }
