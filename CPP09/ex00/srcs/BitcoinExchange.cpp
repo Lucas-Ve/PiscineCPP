@@ -8,6 +8,7 @@ BitcoinExchange::BitcoinExchange(void)
 	std::ifstream file("./data.csv");
 	if (!file.is_open())
 	{
+        std::cout << "Error: could not open file" << std::endl;
         this->_error = 1;
 		return;
 	}
