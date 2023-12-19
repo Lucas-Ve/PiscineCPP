@@ -145,6 +145,7 @@ void BitcoinExchange::execInput(std::string const inputPath)
     if (!file.is_open())
     {
         this->_error = 1;
+        std::cout << "Error: could not open file" << std::endl;
         return;
     }
     while(std::getline(file, this->_line))
@@ -154,6 +155,7 @@ void BitcoinExchange::execInput(std::string const inputPath)
 			i = 1;
 			continue;
 		}
+        i++;
         size_t posPipe = this->_line.find('|');
         if (posPipe == std::string::npos)
         {
@@ -189,6 +191,10 @@ void BitcoinExchange::execInput(std::string const inputPath)
             }
             verifInput();
         }
+    }
+    if (i == 1 || i == 0)
+    {
+        std::cout << "Error: empty file !" << std::endl;
     }
 }
 
