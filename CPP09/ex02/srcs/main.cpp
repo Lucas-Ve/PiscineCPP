@@ -10,7 +10,8 @@ int main(int ac, char *av[])
     clock_t start_t;
     clock_t end_t;
     std::vector<int> tab;
-    std::list<int> tab2;
+    // std::list<int> tab2;
+    std::deque<int> tab2;
     for(int i = 1; av[i]; i++)
     {
         for(int j = 0; av[i][j]; j++)
@@ -39,6 +40,6 @@ int main(int ac, char *av[])
     ::MergeInsetsort(tab2);
     end_t = clock();
     double time_exec2 = double(end_t - start_t);
-    std::cout << "Time to process a range of " << ac - 1 << " elements with std::[list] : " << time_exec2 << " us" << std::endl;
+    std::cout << "Time to process a range of " << ac - 1 << " elements with std::[deque] : " << time_exec2 << " us" << std::endl;
     return (0);
 }
