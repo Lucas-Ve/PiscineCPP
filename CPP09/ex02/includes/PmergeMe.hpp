@@ -78,17 +78,8 @@ void MergeInsetsort(T &container)
     do_pair(container, A, B, &odd);
     std::sort(A.begin(), A.end());
     std::sort(B.begin(), B.end());
-    // printContainer(A);
-    // std::cout << std::endl;
-    // printContainer(B);
-    // std::cout << std::endl;
     size_t n = B.size() + 1;
     std::vector<int> sequence = generateModifiedJacobsthalSequence(n);
-    // std::cout << "S ";
-    // for (size_t i = 0; i < sequence.size(); ++i) {
-    //     std::cout << sequence[i] << " ";
-    // }
-    // std::cout << std::endl;
     int j = 1;
     for (size_t i = 0; i < B.size(); ++i) {
         if(sequence[j] >= static_cast<int>(n))
@@ -96,8 +87,6 @@ void MergeInsetsort(T &container)
             while(sequence[j] && sequence[j] >= static_cast<int>(n))
                 j++;
         }
-        // std::cout << B[sequence[j] - 1] << std::endl;
-        // std::cout << "j = "<< sequence[j] << std::endl;
         binaryInsert(A, B[sequence[j] - 1]);
         j++;
     }
