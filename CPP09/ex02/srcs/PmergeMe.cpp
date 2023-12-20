@@ -1,17 +1,20 @@
 #include "../includes/PmergeMe.hpp"
 
-
-std::vector<int> generateJacobsthalNumbers(int n) {
-    std::vector<int> jacobsthal(n);
-    jacobsthal[0] = 1;
-    jacobsthal[1] = 1;
-    for (int i = 2; i < n; ++i) {
+std::vector<int> generateJacobsthalNumbers(int n)
+{
+    std::vector<int> jacobsthal;
+    if (n <= 0) return jacobsthal;
+    jacobsthal.push_back(0);
+    if (n > 1) {
+        jacobsthal.push_back(1);
+    }
+    for (int i = 2; i <= n; ++i) {
         if (jacobsthal[i-1] + 2 * jacobsthal[i-2] > n)
         {
-            jacobsthal[i] = jacobsthal[i-1] + 2 * jacobsthal[i-2];
+            jacobsthal.push_back(jacobsthal[i - 1] + 2 * jacobsthal[i - 2]);
             break;
         }
-        jacobsthal[i] = jacobsthal[i-1] + 2 * jacobsthal[i-2];
+        jacobsthal.push_back(jacobsthal[i - 1] + 2 * jacobsthal[i - 2]);
     }
     return jacobsthal;
 }
