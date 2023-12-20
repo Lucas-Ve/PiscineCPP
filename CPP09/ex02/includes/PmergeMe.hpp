@@ -22,19 +22,6 @@ void printContainer(T &container)
 }
 
 template <typename T>
-void insetSort(T &container)
-{
-    for (typename T::iterator i = ++container.begin(); i != container.end(); i++)
-    {
-        for (typename T::iterator j = i; j != container.begin() && *--j > *++j;)
-        {
-            typename T::iterator position = j;
-            std::swap(*--j, *position);
-        }
-    }
-}
-
-template <typename T>
 void do_pair(T &container, std::vector<int> &A, std::vector<int> &B, int *odd)
 {
     for (typename T::iterator i = container.begin(); i != container.end(); i++)
